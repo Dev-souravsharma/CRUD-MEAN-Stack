@@ -1,0 +1,62 @@
+<mat-toolbar>Update Data </mat-toolbar>
+<br>
+<form #regForm='ngForm' (ngSubmit)="onUpdate(regForm)">
+  <mat-form-field appearance="outline">
+    <mat-label >Name</mat-label>
+    <input
+    matInput
+    placeholder="eg.example"
+    type="text"
+    name="name"
+    #name = 'ngModel'
+    [(ngModel)]="userService.update.name"
+    >
+  </mat-form-field>
+<br>
+    <mat-form-field appearance="outline">
+      <mat-label >Email</mat-label>
+      <input
+      matInput
+      placeholder="example@abc.com"
+      type="email"
+      name="email"
+      #name = 'ngModel'
+    [(ngModel)]="userService.update.email"
+      >
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label >Profile</mat-label>
+      <input
+      matInput
+      placeholder="eg.Developer"
+      type="text"
+      name="profile"
+      #name = 'ngModel'
+    [(ngModel)]="userService.update.profile"
+
+      >
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label >Contact</mat-label>
+      <input
+      matInput
+      placeholder="eg.0000000000"
+      type="text"
+      name="contact"
+      #name = 'ngModel'
+    [(ngModel)]="userService.update.contact"
+      >
+    </mat-form-field>
+    <br>
+    <div class="container">
+    <button mat-raised-button color='primary' type='submit' (click)="getId(userService.update.id)">update</button>
+    <button mat-raised-button color='primary' color="warn" (click)="onClose()">cancel</button>
+  </div>
+</form>
+<br>
+
+
+

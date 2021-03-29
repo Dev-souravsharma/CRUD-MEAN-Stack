@@ -1,0 +1,41 @@
+<br>
+<mat-card>
+  <mat-toolbar>SignIn</mat-toolbar>
+<br>
+<form #loginform="ngForm" (ngSubmit)="login(loginform)">
+
+    <mat-form-field appearance="outline">
+      <mat-label >Email</mat-label>
+      <input
+      matInput
+      placeholder="example@abc.com"
+      type="email"
+      name="email"
+      #email="ngModel"
+      [(ngModel)]="userservice.existingUser.email"
+      >
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+      matInput
+      placeholder="********"
+      type="password"
+      name="password"
+      #password="ngModel"
+      [(ngModel)]="userservice.existingUser.password"
+      >
+    </mat-form-field>
+
+  <div class="text-center">
+    <button mat-raised-button color='primary' >SignIn</button>
+  </div>
+</form>
+<br>
+<div class="text-center">
+  <p >Create an Account?<a routerLink='/signup'>SignUp</a></p>
+</div>
+</mat-card>
+<br>

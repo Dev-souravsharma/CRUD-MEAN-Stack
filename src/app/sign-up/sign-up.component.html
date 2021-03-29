@@ -1,0 +1,80 @@
+<br>
+<mat-card>
+  <mat-toolbar>SignUp</mat-toolbar>
+<br>
+<form #regForm='ngForm' (ngSubmit)="onSubmit(regForm)">
+  <mat-form-field appearance="outline">
+    <mat-label >Name</mat-label>
+    <input
+    matInput
+    placeholder="eg.example"
+    type="text"
+    name="name"
+    #name = 'ngModel'
+    [(ngModel)]="userService.newUser.name"
+    >
+  </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label >Email</mat-label>
+      <input
+      matInput
+      placeholder="example@abc.com"
+      type="email"
+      name="email"
+      #email = 'ngModel'
+      [(ngModel)]="userService.newUser.email"
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+      matInput
+      placeholder="********"
+      type="password"
+      name="password"
+      #password = 'ngModel'
+      [(ngModel)]="userService.newUser.password"
+      >
+    </mat-form-field><br>
+    <mat-form-field appearance="outline">
+      <mat-label >confirm-password</mat-label>
+      <input
+      matInput
+      placeholder="***********"
+      type="text"
+      name="cpassword"
+      >
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label >Profile</mat-label>
+      <input
+      matInput
+      placeholder="eg.Developer"
+      type="text"
+      name="profile"
+      #profile = 'ngModel'
+      [(ngModel)]="userService.newUser.profile"
+      >
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label >Contact</mat-label>
+      <input
+      matInput
+      placeholder="eg.0000000000"
+      type="text"
+      name="contact"
+      #contact = 'ngModel'
+      [(ngModel)]="userService.newUser.contact"
+      >
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color='primary' type='submit'>SignUp</button>
+</form>
+<br>
+  <p >Create an Account?<a routerLink='/signin'>Signin</a></p>
+
+</mat-card>

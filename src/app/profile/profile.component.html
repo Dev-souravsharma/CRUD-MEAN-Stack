@@ -1,0 +1,66 @@
+<br>
+<mat-card class="text-center" ><h1><b>Admin Panel</b></h1></mat-card>
+<br><br>
+<mat-card>
+<mat-toolbar class="container">
+
+  <b> Welcome {{userDetails.data?.name}}</b>
+  <button mat-button matTooltip="logout" matTooltipPosition="left"><mat-icon (click)="logout()" class="red-warning" aria-hidden="false" aria-label="Example home icon">logout</mat-icon>
+  </button>
+  <!-- <button (click)="getAllData()">Get All Data</button> -->
+</mat-toolbar>
+<!-- <table class="table">
+  <tr class="table-dark">
+    <th>Name</th>
+    <th>Email</th>
+    <th>Contact</th>
+  </tr>
+
+<tr>
+ <td>{{userDetails.data?.name}}</td>
+ <td>{{userDetails.data?.email}}</td>
+ <td>{{userDetails.data?.contact}}</td>
+</tr><br> -->
+<!-- <button (click)="getAllData()">Get All Data</button> -->
+<!-- <hr>
+<br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Contact</th>
+  </tr>
+
+<tr *ngFor="let user of testingData.data">
+ <td>{{user.name}}</td>
+ <td>{{user.email}}</td>
+ <td>{{user.contact}}</td>
+</tr>
+</table> -->
+
+<!-- Expansion pannel -->
+<mat-accordion >
+<mat-expansion-panel  (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false" *ngFor="let user of testingData.data">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{user.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+          {{user.profile}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="container">
+    <p>{{user.email}}</p>
+    <p>{{user.contact}}</p>
+
+    <button mat-button  colour="basic" matTooltip="delete" matTooltipPosition="left"><mat-icon class="delbutton" aria-hidden="false" aria-label="Example home icon" (click)="deleteUser(user._id)">delete</mat-icon>
+    </button>
+    <button mat-button  colour="basic" matTooltip="update" matTooltipPosition="left" (click)="updateData(user)"> <mat-icon aria-hidden="false" aria-label="Example home icon" >update</mat-icon></button>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+</mat-card>
+
+
+

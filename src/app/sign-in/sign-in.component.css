@@ -2,17 +2,19 @@ mat-card{
   width: 70%;
   margin: auto;
 }
+/* mat-toolbar{
+  background-color: black;
+} */
+mat-form-field{
+  width: 70%;
+}
 .text-center{
   text-align: center;
 }
-mat-form-field{
-  width: 70%;
-
+button{
+  width: 20%;
 }
 form{
-  text-align: center;
-}
-p{
   text-align: center;
 }
 :host {

@@ -1,0 +1,26 @@
+mat-card{
+  width: 70%;
+  margin: auto;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+
+}
+.red-warning:hover{
+  color: red;
+}
+.delbutton:hover{
+
+  color: #FF5252;
+
+}
+.text-center{
+  text-align: center;
+}
+
+:host {
+  background-color:#F8F8FF;
+  height: 100%;
+  display: block;
+}
