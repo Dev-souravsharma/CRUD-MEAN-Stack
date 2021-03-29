@@ -13,10 +13,16 @@ let api = require('./passwordEncryption/routes/userRoutes');
 app.use(express.static(__dirname+"dist/Authentication/index.html"));
 app.use('/',api);
 app.use((req,res,next)=>{
-  res.setHeader(Access-Control-Allow-Origin ,'*'),
-  res.setHeader(Access-Control-Allow-Methods ,'POST','GET','PUT','DELETE','OPTIONS'),
-  res.setHeader(Access-Control-Allow-Headers ,'Origin,Content-Type, Accept')
-  res.setHeader(Access-Control-Allow-Credentials,true)
+  // res.setHeader(Access-Control-Allow-Origin ,'*'),
+  // res.setHeader(Access-Control-Allow-Methods ,'POST','GET','PUT','DELETE','OPTIONS'),
+  // res.setHeader(Access-Control-Allow-Headers ,'Origin,Content-Type, Accept')
+  // res.setHeader(Access-Control-Allow-Credentials,true)
+  res.header("Access-Control-Allow-Origin", '*');
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+  next();
+
 });
 // Error message
 const error =(error)=>{
