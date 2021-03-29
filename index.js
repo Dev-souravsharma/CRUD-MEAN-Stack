@@ -1,4 +1,4 @@
-require('./config/db');
+require('./passwordEncryption/config/db');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -9,8 +9,8 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors());
 
-let api = require('./routes/userRoutes');
-
+let api = require('./passwordEncryption/routes/userRoutes');
+app.use(express.static(__dirname+"dist/Authentication/index.html"));
 app.use('/',api);
 app.use((req,res,next)=>{
   res.setHeader(Access-Control-Allow-Origin ,'*'),

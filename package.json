@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "nodemon index.js && ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -26,11 +27,25 @@
     "ngx-bootstrap": "^6.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.11.3"
+    "zone.js": "~0.11.3",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "promise": "^8.1.0",
+    "@angular/cli": "~11.1.2",
+    "typescript": "~4.1.2"
+  },
+  "engines": {
+    "node": "14.16.0",
+    "npm": "6.14.11"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1101.2",
-    "@angular/cli": "~11.1.2",
     "@angular/compiler-cli": "~11.1.1",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
@@ -44,7 +59,6 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~4.1.2"
+    "tslint": "~6.1.0"
   }
 }
