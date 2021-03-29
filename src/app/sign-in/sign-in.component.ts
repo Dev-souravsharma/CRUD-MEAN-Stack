@@ -30,24 +30,24 @@ export class SignInComponent implements OnInit {
 
   login(f:NgForm)
   {
-    console.log(f.value);
+    // console.log(f.value);
     this.userservice.loginUser(f.value).subscribe((res)=>{
-      console.log(res);
+      // console.log(res);
       this.resData = res;
       this.userservice.userData(this.resData);
-      console.log(this.resData.token);
+      // console.log(this.resData.token);
       this.userservice.setToken(this.resData.token);
       this.id=this.resData.data._id;
       // this.router.navigateByUrl('/profile');
       this.router.navigate(['/profile'],{"queryParams":{id:this.id}})
-      console.log(this.id);
+      // console.log(this.id);
       this.showmessage=true;
     },
     (error)=>{
       this.errorMessage=true;
       this.error=error;
       this.openSnackBar("Enter valid email and password","cancel");
-      console.log(error);
+      // console.log(error);
     });
 
   }

@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
             // console.log(res);
             this.userDetails=res;
         },(error)=>{
-          console.log(error);
+          // console.log(error);
         });
     })
 
@@ -51,8 +51,6 @@ export class ProfileComponent implements OnInit {
 
     },(error)=>
     console.log(error));
-
-
   }
   getAllData(){
       this.testingData=this.userService.getAllUserData().subscribe((res)=>{

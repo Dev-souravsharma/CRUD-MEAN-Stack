@@ -17,12 +17,12 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(F:NgForm){
-    console.log(F.value);
+    // console.log(F.value);
     this.userService.addNewUser(F.value).subscribe((res)=>{
-      console.log(res);
+      // console.log(res);
       this.route.navigateByUrl('/signin');
     },(err)=>{
-      console.log(err);
+      // console.log(err);
       this.openSnackBar('Enter valid details','cancel');
     })
   }

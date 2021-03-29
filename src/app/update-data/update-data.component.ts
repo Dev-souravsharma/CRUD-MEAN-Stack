@@ -37,11 +37,11 @@ export class UpdateDataComponent implements OnInit {
   onUpdate(formdata:NgForm){
       // console.log('Form data'+formdata.value);
       this.userService.updateData(this.userId,formdata.value).subscribe((res)=>{
-        console.log("Data updated successfully"+res);
+        // console.log("Data updated successfully"+res);
       this.dialogRef.close();
       this.userService.getAllUserData();
       },(err)=>{
-        console.log(err);
+        // console.log(err);
       });
   }
 
