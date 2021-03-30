@@ -10,8 +10,9 @@ app.use(express.json());
 app.use(cors());
 
 let api = require('./passwordEncryption/routes/userRoutes');
-// app.use(express.static(__dirname+"dist/Authentication/index.html"));
-app.use(express.static(path.join(__dirname,"dist","CRUD-MEAN-Stack")));
+app.use(express.static(__dirname+"/dist/Authentication"));
+// app.use(express.static(path.join(__dirname,"dist","CRUD-MEAN-Stack")));
+
 // app.use('/',api);
 app.use((req,res,next)=>{
   // res.setHeader(Access-Control-Allow-Origin ,'*'),
@@ -26,7 +27,7 @@ app.use((req,res,next)=>{
 
 });
 app.get('/*',function(req,res){
-  res.sendFile(__dirname+"dist/Authentication/index.html");
+  res.sendFile(__dirname+"/dist/Authentication/index.html");
 })
 // Error message
 const error =(error)=>{
