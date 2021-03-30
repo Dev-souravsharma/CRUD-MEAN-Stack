@@ -13,7 +13,7 @@ let api = require('./passwordEncryption/routes/userRoutes');
 app.use(express.static(__dirname+"/dist/Authentication"));
 // app.use(express.static(path.join(__dirname,"dist","CRUD-MEAN-Stack")));
 
-// app.use('/',api);
+app.use('/',api);
 app.use((req,res,next)=>{
   // res.setHeader(Access-Control-Allow-Origin ,'*'),
   // res.setHeader(Access-Control-Allow-Methods ,'POST','GET','PUT','DELETE','OPTIONS'),
@@ -26,9 +26,11 @@ app.use((req,res,next)=>{
   next();
 
 });
+
 app.get('/*',function(req,res){
   res.sendFile(__dirname+"/dist/Authentication/index.html");
 })
+
 // Error message
 const error =(error)=>{
     if(error)
