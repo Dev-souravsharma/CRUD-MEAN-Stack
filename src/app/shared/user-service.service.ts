@@ -32,11 +32,11 @@ export class UserServiceService {
   constructor(private http:HttpClient) { }
 
   addNewUser(newuser:User){
-      return this.http.post(environment.apiBaseUrl+'newUser',newuser);
+      return this.http.post('/newUser',newuser);
   }
   loginUser(verifyUser:loginUser)
   {
-   return this.http.post(environment.apiBaseUrl+'auth',verifyUser);
+   return this.http.post('/auth',verifyUser);
   }
 
 
@@ -77,18 +77,18 @@ export class UserServiceService {
   }
 
   getSelectedUser(id:string){
-      return this.http.get(environment.apiBaseUrl+"selectuser/"+id);
+      return this.http.get("/selectuser/"+id);
   }
 
   getAllUserData(){
-    return this.http.get(environment.apiBaseUrl+"alluserdata");
+    return this.http.get("/alluserdata");
   }
 
   deleteUser(id:string){
-    return this.http.delete(environment.apiBaseUrl+"api/deleteUser/"+id);
+    return this.http.delete("/api/deleteUser/"+id);
   }
   updateData(id:string,updateDataForUser:any){
-      return this.http.put(environment.apiBaseUrl+"api/updateData/"+id,updateDataForUser);
+      return this.http.put("/api/updateData/"+id,updateDataForUser);
   }
   // Getting Data from profile
   getDataFromProfileComponent(data:any){
@@ -97,6 +97,9 @@ export class UserServiceService {
       this.update.email=data.email;
       this.update.contact=data.contact;
       this.update.profile=data.profile;
+  }
+  isAuthenticated(){
+    return localStorage.getItem('token')!=null;
   }
 }
 

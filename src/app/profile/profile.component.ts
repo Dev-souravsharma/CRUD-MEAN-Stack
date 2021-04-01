@@ -84,8 +84,10 @@ export class ProfileComponent implements OnInit {
     this.dialog.open(UpdateDataComponent,dialogConfig);
     // Sending data to Service
     // console.log(value);
-    this.userService.getDataFromProfileComponent(value);
-    this.getAllData();
+    this.userService.getDataFromProfileComponent(value)
+
+
+
   }
 
 }
